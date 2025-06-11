@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maw's Home of Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Maw's Home of Games</h1>
+        </header>
+        
+        <main>
+            <div class="games-grid">
+                <div v-for="game in games" :key="game.id" class="game-card" @click="openGame(game.url)">
+                    <img :src="game.thumbnail" :alt="game.title">
+                    <h2>{{ game.title }}</h2>
+                    <p>{{ game.description }}</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Maw's Home of Games</p>
+        </footer>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
